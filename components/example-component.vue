@@ -1,15 +1,13 @@
-<template>
-
-</template>
+<template><div></div></template>
 
 <script>
 export default {
-  mounted () {
+  asyncData({ $hello }) {
+    $hello('asyncData')
+  },
+  mounted() {
     this.$hello('mounted')
     // will console.log 'Hello mounted!'
   },
-  asyncData ({ $hello ) {
-    $hello('asyncData')
-  }
 }
 </script>
