@@ -35,8 +35,8 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
-    // '~/plugins/smartCardReader.js'
-    '~/plugins/hello.js',
+    '~/plugins/smartCardReader.js',
+    // '~/plugins/hello.js',
   ],
   /*
    ** Auto import components
@@ -77,5 +77,11 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    extend(config, { isDev, isClient }) {
+      config.node = {
+        fs: 'empty',
+      }
+    },
+  },
 }
